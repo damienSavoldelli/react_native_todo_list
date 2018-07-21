@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 
+import lodash from 'lodash'
+
 import Header from './app/components/Header';
 import TaskList from './app/components/TaskList';
 import AddTaskButton from './app/components/AddTaskButton';
@@ -38,11 +40,27 @@ export default class App extends React.Component {
       list,
       styles,
       isModalTaskVisible: false,
+      currentTask: {}
     };
   }
 
-  toggleModalTaskVisiblity = () => {
-    this.setState({isModalTaskVisible: !this.state.isModalTaskVisible})
+  toggleModalTaskVisiblity = task => {
+    let currentTask = task;
+    if (this.state.isModalTaskVisible) {
+      currentTask = {};
+    }
+    this.setState({isModalTaskVisible: !this.state.isModalTaskVisible, currentTask: currentTask})
+  }
+
+  deleteCurrentTask = () => {
+    const index = lodash.findIndex(this.state.list, {id:this.state.currentTask.id});
+
+    const list = this.state.list;
+    list.splice(index, 1);
+    
+    this.setState({ list: list, currentTask: {} });
+
+    this.toggleModalTaskVisiblity();
   }
 
   render() {
@@ -57,8 +75,10 @@ export default class App extends React.Component {
         </ScrollView>
         <AddTaskButton />
         <ModalTask
+          task={this.state.currentTask}
           isVisible={this.state.isModalTaskVisible}
           onHideCallback={this.toggleModalTaskVisiblity}
+          onDeleteCallback={this.deleteCurrentTask}
         />
       </View>
     );

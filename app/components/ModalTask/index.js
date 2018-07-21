@@ -5,7 +5,9 @@ import { Button } from 'react-native-elements';
 import Modal from 'react-native-modal';
 import styles from './styles';
 
-const ModalTask = ({ isVisible, onHideCallback }) => (
+const ModalTask = ({
+  task, isVisible, onHideCallback, onDeleteCallback,
+}) => (
   <Modal
     isVisible={isVisible}
     animationIn="zoomInDown"
@@ -19,11 +21,12 @@ const ModalTask = ({ isVisible, onHideCallback }) => (
     <View style={styles.modal}>
       <View style={styles.title}>
         <Text>Que souhaitez vous faire sur la tache</Text>
+        <Text>{task.content}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <Button
           title="Supprimer"
-          onPress={() => onHideCallback()}
+          onPress={() => onDeleteCallback()}
           buttonStyle={styles.deleteButton}
         />
         <Button

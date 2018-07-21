@@ -4,7 +4,7 @@ import { APP_COLORS } from '../../styles/color';
 export default StyleSheet.create({
   modal: {
     backgroundColor: '#FFF',
-    height: 200,
+    height: 150,
     justifyContent: 'space-around',
   },
   title: {

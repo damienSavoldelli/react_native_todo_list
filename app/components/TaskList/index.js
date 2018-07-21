@@ -12,7 +12,7 @@ const TaskList = ({ taskList, onPressCallBack }) => (
       <ListItem
         key={task.id}
         title={task.content}
-        onPress={onPressCallBack}
+        onPress={() => onPressCallBack(task)}
         badge={{
           element: (
             <Badge
