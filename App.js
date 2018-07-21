@@ -7,6 +7,8 @@ import Header from './app/components/Header';
 import TaskList from './app/components/TaskList';
 import AddTaskButton from './app/components/AddTaskButton';
 import ModalTask from './app/components/ModalTask';
+import { TASK } from './app/model';
+
 
 
 const styles = StyleSheet.create({
@@ -63,6 +65,18 @@ export default class App extends React.Component {
     this.toggleModalTaskVisiblity();
   }
 
+  togglStatusTask = () => {
+    const updatedTask = this.state.currentTask;
+    updatedTask.status = this.state.currentTask.status === TASK.doneStatus ? TASK.todoStatus : TASK.doneStatus;
+
+    const index = lodash.findIndex(this.state.list, {id:this.state.currentTask.id});
+
+    const updatedTaskList = this.state.list;
+
+    updatedTaskList[index] = updatedTask;
+    this.setState({ list: updatedTaskList, isModalTaskVisible: false, currentTask: {} });
+  }
+
   render() {
     return (
       <View style={this.state.styles.container}>
@@ -79,6 +93,7 @@ export default class App extends React.Component {
           isVisible={this.state.isModalTaskVisible}
           onHideCallback={this.toggleModalTaskVisiblity}
           onDeleteCallback={this.deleteCurrentTask}
+          onChangeStatusCallback={this.togglStatusTask}
         />
       </View>
     );

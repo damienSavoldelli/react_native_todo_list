@@ -6,7 +6,7 @@ import Modal from 'react-native-modal';
 import styles from './styles';
 
 const ModalTask = ({
-  task, isVisible, onHideCallback, onDeleteCallback,
+  task, isVisible, onHideCallback, onDeleteCallback, onChangeStatusCallback,
 }) => (
   <Modal
     isVisible={isVisible}
@@ -31,7 +31,7 @@ const ModalTask = ({
         />
         <Button
           title="Changer Status"
-          onPress={() => onHideCallback()}
+          onPress={() => onChangeStatusCallback()}
           buttonStyle={styles.changeStatusButton}
         />
       </View>
