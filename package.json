@@ -32,6 +32,7 @@
     "react-native": "~0.55.2",
     "react-native-action-button": "^2.8.4",
     "react-native-elements": "^0.19.1",
-    "react-native-modal": "^6.4.0"
+    "react-native-modal": "^6.4.0",
+    "react-native-prompt-crossplatform": "^1.6.1"
   }
 }
