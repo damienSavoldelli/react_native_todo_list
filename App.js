@@ -1,9 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
-// import { Button as ButtonElement } from 'react-native-elements'; // alias
+import { View, StyleSheet, ScrollView } from 'react-native';
+
 import Header from './app/components/Header';
 import TaskList from './app/components/TaskList';
+import AddTaskButton from './app/components/AddTaskButton';
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 const list = [
   {
@@ -28,14 +35,18 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       list,
+      styles,
     };
   }
 
   render() {
     return (
-      <View>
+      <View style={this.state.styles.container}>
         <Header content="Liste des tâches" />
-        <TaskList taskList={this.state.list} />
+        <ScrollView>
+          <TaskList taskList={this.state.list} />
+        </ScrollView>
+        <AddTaskButton />
       </View>
     );
   }
