@@ -20,7 +20,7 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix" 
+    "lint:fix": "eslint . --fix"
   },
   "jest": {
     "preset": "jest-expo"
@@ -28,6 +28,7 @@
   "dependencies": {
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-native-elements": "^0.19.1"
   }
 }
