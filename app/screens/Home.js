@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, AsyncStorage } from 'react-native';
+import { StatusBar, View, Text, TouchableOpacity, StyleSheet, ScrollView, AsyncStorage } from 'react-native';
 
 import lodash from 'lodash'
 
@@ -160,6 +160,10 @@ class Home extends Component {
     this.hideRenamePrompt();    
   }
 
+  onSettingPress = () => {
+    this.props.navigation.navigate('Setting');
+  }
+
   saveTaskList = () => {
     AsyncStorage.setItem(storageKey, JSON.stringify(this.state.list));
   }
@@ -187,7 +191,11 @@ class Home extends Component {
   render() {
     return (
       <View style={this.state.styles.container}>
-        <Header content="Liste des tâches" />
+        <StatusBar translucent={false} barStyle="light-content" />
+        <Header 
+          content="Liste des tâches"
+          onPressCallback={() => this.onSettingPress()}
+        />
         <ScrollView>
           {this.RenderTaskList()}
         </ScrollView>
