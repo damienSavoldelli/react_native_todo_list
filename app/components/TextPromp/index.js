@@ -4,15 +4,21 @@ import { APP_COLORS } from '../../styles/color';
 // import styles from '../AddTaskPromp/styles';
 
 
-const AddTaskPromp = ({
-  isVisible = false, onCancelCallback, onSubmitCallback, onChangeTextCallback,
+const TextPromp = ({
+  isVisible = false,
+  onCancelCallback,
+  onSubmitCallback,
+  onChangeTextCallback,
+  title = 'Ajouter une tâche',
+  placeholder = "Ex: Acheter de l'eau",
+  defaultValue = '',
 }) => (
   <Prompt
     isVisible={isVisible}
     promptAnimation="fade"
-    title="Ajouter une tâche"
-    inputPlaceholder="Ex: Acheter de l'eau"
-    defaultValue=""
+    title={title}
+    inputPlaceholder={placeholder}
+    defaultValue={defaultValue}
     cancelButtonText="Annuler"
     submitButtonText="Valider"
     onChangeText={text => onChangeTextCallback(text)}
@@ -22,4 +28,4 @@ const AddTaskPromp = ({
   />
 );
 
-export default AddTaskPromp;
+export default TextPromp;
