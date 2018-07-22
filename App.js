@@ -3,12 +3,13 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 
 import lodash from 'lodash'
 
+import { TASK } from './app/model';
+
 import Header from './app/components/Header';
 import TaskList from './app/components/TaskList';
 import AddTaskButton from './app/components/AddTaskButton';
 import ModalTask from './app/components/ModalTask';
-import { TASK } from './app/model';
-
+import AddTaskPromp from './app/components/AddTaskPromp';
 
 
 const styles = StyleSheet.create({
@@ -42,7 +43,10 @@ export default class App extends React.Component {
       list,
       styles,
       isModalTaskVisible: false,
-      currentTask: {}
+      isPromptTaskVisible: false,
+      promptTaskContent: '',
+      currentTask: {},
+      idGenrator: 0,
     };
   }
 
@@ -77,6 +81,35 @@ export default class App extends React.Component {
     this.setState({ list: updatedTaskList, isModalTaskVisible: false, currentTask: {} });
   }
 
+  displayAddPrompt = () => {
+    this.setState({isPromptTaskVisible: true});
+  }
+
+  hideAddPrompt = () => {
+    this.setState({isPromptTaskVisible: false});
+  }
+
+  onAChangeTextTask = (value) => {
+    this.setState({promptTaskContent: value});
+
+    console.log("CHANGE PROMPT ", this.state);
+  }
+
+  onAddTask = () => {
+    let newTaskContent = this.state.promptTaskContent;
+    if (newTaskContent !== "") {
+      const newTask = {
+        id: this.state.idGenrator,
+        content: newTaskContent,
+        status: TASK.todoStatus
+      }
+
+      this.setState({list: [...this.state.list, newTask], idGenrator: this.state.idGenrator++})
+    }
+
+    this.hideAddPrompt();
+  }
+
   render() {
     return (
       <View style={this.state.styles.container}>
@@ -84,16 +117,24 @@ export default class App extends React.Component {
         <ScrollView>
           <TaskList
             taskList={this.state.list}
-            onPressCallBack={this.toggleModalTaskVisiblity}
+            onPressCallback={this.toggleModalTaskVisiblity}
           />
         </ScrollView>
-        <AddTaskButton />
+        <AddTaskButton 
+          onPressCallback={() => this.displayAddPrompt()}
+        />
         <ModalTask
           task={this.state.currentTask}
           isVisible={this.state.isModalTaskVisible}
           onHideCallback={this.toggleModalTaskVisiblity}
           onDeleteCallback={this.deleteCurrentTask}
           onChangeStatusCallback={this.togglStatusTask}
+        />
+        <AddTaskPromp 
+          isVisible={this.state.isPromptTaskVisible}
+          onCancelCallback={() => this.hideAddPrompt()}
+          onSubmitCallback={() => this.onAddTask()}
+          onChangeTextCallback={value => this.onAChangeTextTask(value)}
         />
       </View>
     );
