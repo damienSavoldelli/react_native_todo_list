@@ -21,7 +21,7 @@ const ModalTask = ({
     <View style={styles.modal}>
       <View style={styles.title}>
         <Text>Que souhaitez vous faire sur la tache</Text>
-        <Text>{task.content}</Text>
+        <Text>{(typeof task === 'object') ? task.content : ''}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <Button

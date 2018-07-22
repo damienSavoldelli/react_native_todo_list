@@ -18,7 +18,7 @@ const TextPromp = ({
     promptAnimation="fade"
     title={title}
     inputPlaceholder={placeholder}
-    defaultValue={defaultValue}
+    defaultValue={(typeof defaultValue === 'object') ? defaultValue.content : ''}
     cancelButtonText="Annuler"
     submitButtonText="Valider"
     onChangeText={text => onChangeTextCallback(text)}

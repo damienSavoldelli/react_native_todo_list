@@ -11,6 +11,7 @@ import AddTaskButton from './app/components/AddTaskButton';
 import ModalTask from './app/components/ModalTask';
 import TextPromp from './app/components/TextPromp';
 
+const storageKey = 'taskList';
 
 const styles = StyleSheet.create({
   container: {
@@ -44,6 +45,16 @@ export default class App extends React.Component {
     };
   }
 
+  componentWillMount() {
+    AsyncStorage.getItem(storageKey).then(storedTasklist =>{
+      if (storedTasklist) {
+        this.setState({list: JSON.parse(storedTasklist)}, () => {
+          this.setState({idGenrator: this.state.list[this.state.list.length -1].id + 1})
+        });
+      }
+    })
+  }
+
   toggleModalTaskVisiblity = task => {
     let currentTask = task;
     if (this.state.isModalTaskVisible) {
@@ -53,26 +64,33 @@ export default class App extends React.Component {
   }
 
   deleteCurrentTask = () => {
-    const index = lodash.findIndex(this.state.list, {id:this.state.currentTask.id});
+    if (this.state.currentTask !== "undefined") {
+      const index = lodash.findIndex(this.state.list, {id:this.state.currentTask.id});
 
-    const list = this.state.list;
-    list.splice(index, 1);
-    
-    this.setState({ list: list, currentTask: {} });
-
+      const list = this.state.list;
+      list.splice(index, 1);
+      
+      this.setState({ list: list, currentTask: {} }, () => {
+        this.saveTaskList();
+      });
+    }
     this.toggleModalTaskVisiblity();
   }
 
   togglStatusTask = () => {
-    const updatedTask = this.state.currentTask;
-    updatedTask.status = this.state.currentTask.status === TASK.doneStatus ? TASK.todoStatus : TASK.doneStatus;
+    if (this.state.currentTask !== "undefined") {
+      const updatedTask = this.state.currentTask;
+      updatedTask.status = this.state.currentTask.status === TASK.doneStatus ? TASK.todoStatus : TASK.doneStatus;
 
-    const index = lodash.findIndex(this.state.list, {id:this.state.currentTask.id});
+      const index = lodash.findIndex(this.state.list, {id:this.state.currentTask.id});
 
-    const updatedTaskList = this.state.list;
+      const updatedTaskList = this.state.list;
 
-    updatedTaskList[index] = updatedTask;
-    this.setState({ list: updatedTaskList, isModalTaskVisible: false, currentTask: {} });
+      updatedTaskList[index] = updatedTask;
+      this.setState({ list: updatedTaskList, isModalTaskVisible: false, currentTask: {} }, () => {
+        this.saveTaskList();
+      });
+    }
   }
 
   displayAddPrompt = () => {
@@ -100,7 +118,9 @@ export default class App extends React.Component {
         list: [...this.state.list, newTask],
         promptTaskContent:"",
         idGenrator: this.state.idGenrator+1
-      })
+      }, () => {
+        this.saveTaskList();
+      });
     }
 
     this.hideAddPrompt();
@@ -136,9 +156,14 @@ export default class App extends React.Component {
       
       this.setState({ list: updatedTaskList, currentTask: {} }, () => {
         this.hideRenamePrompt();
+        this.saveTaskList();
       });
     }
     this.hideRenamePrompt();    
+  }
+
+  saveTaskList = () => {
+    AsyncStorage.setItem(storageKey, JSON.stringify(this.state.list));
   }
 
   RenderTaskList() {
@@ -190,7 +215,7 @@ export default class App extends React.Component {
           onSubmitCallback={() => this.onRenameTask()}
           onChangeTextCallback={value => this.onRChangeTextTask(value)}
           title= 'Renomer la tâche'
-          defaultValue={this.state.currentTask.content}
+          defaultValue={this.state.currentTask}
         />
       </View>
     );
