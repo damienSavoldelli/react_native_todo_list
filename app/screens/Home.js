@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StatusBar, View, Text, TouchableOpacity, StyleSheet, ScrollView, AsyncStorage } from 'react-native';
+import { translate } from 'react-i18next';
 
 import lodash from 'lodash'
 
@@ -169,12 +170,15 @@ class Home extends Component {
   }
 
   RenderTaskList() {
+    const { t } = this.props;
+
     if (this.state.list.length > 0 ) {
       return (
         <TaskList
             taskList={this.state.list}
             onPressCallback={this.toggleModalTaskVisiblity}
             onLongPressCallback={(task) => this.displayRenamePrompt(task)}
+            t={t}
           />
       );
     }
@@ -183,17 +187,19 @@ class Home extends Component {
         style={this.state.styles.addTaskContainer}
         onPress={() => this.displayAddPrompt()}
       >
-        <Text style={this.state.styles.addTaskText}>Ajouter un tâche</Text>
+        <Text style={this.state.styles.addTaskText}>{t('home:add_task')}</Text>
       </TouchableOpacity>
     );
   }
 
   render() {
+    const { t } = this.props;
+
     return (
       <View style={this.state.styles.container}>
         <StatusBar translucent={false} barStyle="default" />
         <Header 
-          content="Liste des tâches"
+          content={t('home:title')}
           onPressCallback={() => this.onSettingPress()}
         />
         <ScrollView>
@@ -228,4 +234,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default translate(['home', 'common'], { wait: true })(Home);
