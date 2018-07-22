@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView, AsyncStorage } fr
 import lodash from 'lodash'
 
 import { TASK } from './app/model';
+import { storageKey } from './app/config/keys'
 
 import Header from './app/components/Header';
 import TaskList from './app/components/TaskList';
@@ -11,7 +12,6 @@ import AddTaskButton from './app/components/AddTaskButton';
 import ModalTask from './app/components/ModalTask';
 import TextPromp from './app/components/TextPromp';
 
-const storageKey = 'taskList';
 
 const styles = StyleSheet.create({
   container: {
@@ -138,8 +138,6 @@ export default class App extends React.Component {
 
   onRChangeTextTask = (value) => {
     this.setState({promptTaskContent: value});
-
-    console.log("CHANGE PROMPT ", this.state);
   }
 
   onRenameTask = () => {
