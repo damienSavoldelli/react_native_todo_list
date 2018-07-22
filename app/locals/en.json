@@ -5,6 +5,11 @@
     "tasklist": {
       "todo_status": "To do",
       "done_status": "Done"
+    },
+    "modal_task": {
+      "title": "What do you want to do on this task",
+      "delete": "Delete",
+      "change_status": "Change Status"
     }
   },
   "setting": {

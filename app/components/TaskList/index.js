@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, ListItem, Badge } from 'react-native-elements';
-
 import { translate } from 'react-i18next';
+
 import { TASK } from '../../model';
 import { APP_COLORS } from '../../styles/color';
 
