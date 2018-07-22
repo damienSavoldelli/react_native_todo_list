@@ -6,13 +6,13 @@ import { APP_COLORS } from '../../styles/color';
 
 import styles from './styles';
 
-const TaskList = ({ taskList, onPressCallBack }) => (
+const TaskList = ({ taskList, onPressCallback }) => (
   <List containerStyle={styles.list}>
     {taskList.map(task => (
       <ListItem
         key={task.id}
         title={task.content}
-        onPress={() => onPressCallBack(task)}
+        onPress={() => onPressCallback(task)}
         badge={{
           element: (
             <Badge
