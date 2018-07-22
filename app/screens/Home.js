@@ -226,7 +226,7 @@ class Home extends Component {
           onCancelCallback={() => this.hideRenamePrompt()}
           onSubmitCallback={() => this.onRenameTask()}
           onChangeTextCallback={value => this.onRChangeTextTask(value)}
-          title= 'Renomer la tâche'
+          title= {t('home:rename_task:title')}
           defaultValue={this.state.currentTask}
         />
       </View>

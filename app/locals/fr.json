@@ -10,6 +10,13 @@
       "title": "Que souhaitez vous faire sur la tâche",
       "delete": "Supprimer",
       "change_status": "Changer Statut"
+    },
+    "new_task": {
+      "title": "Ajouter une tâche",
+      "placeholder": "Ex : Acheter de l'eau"
+    },
+    "rename_task": {
+      "title": "Renommer la tâche"
     }
   },
   "setting": {
@@ -19,7 +26,9 @@
     "currentLanguage": "Langue : \"{{lng}}\"",
     "actions": {
       "toggleToFrench": "Français",
-      "toggleToEnglish": "Englais"
+      "toggleToEnglish": "Englais",
+      "submit": "Valider",
+      "cancel": "Annuler"
     }
   }
 }

@@ -10,6 +10,13 @@
       "title": "What do you want to do on this task",
       "delete": "Delete",
       "change_status": "Change Status"
+    },
+    "new_task": {
+      "title": "Add new task",
+      "placeholder": "Ex : Buy water"
+    },
+    "rename_task": {
+      "title": "Rename the task"
     }
   },
   "setting": {
@@ -19,7 +26,9 @@
     "currentLanguage": "Language : \"{{lng}}\"",
     "actions": {
       "toggleToFrench": "French",
-      "toggleToEnglish": "English"
+      "toggleToEnglish": "English",
+      "submit": "Submit",
+      "cancel": "Cancel"
     }
   }
 }
