@@ -1,5 +1,9 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "name": "todo_list",
+    "description": "A Todo List based on https://www.udemy.com/tuto-react-native-pour-debutants/",
+    "orientation": "portrait",
+    "privacy": "public"
   }
 }
