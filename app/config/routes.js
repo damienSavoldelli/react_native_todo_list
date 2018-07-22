@@ -14,9 +14,6 @@ const HomeStack = createStackNavigator(
     },
     Setting: {
       screen: Setting,
-      navigationOptions: {
-        headerTitle: 'Settings',
-      },
     },
   },
   {
