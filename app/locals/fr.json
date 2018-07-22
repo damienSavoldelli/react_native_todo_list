@@ -1,6 +1,11 @@
 {
   "home": {
-    "title": "Liste de Tâche"
+    "title": "Liste de Tâche",
+    "add_task": "Ajouter une tâche",
+    "tasklist": {
+      "todo_status": "En cours",
+      "done_status": "Terminé"
+    }
   },
   "setting": {
     "title": "Paramètres"

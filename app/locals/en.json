@@ -1,6 +1,11 @@
 {
   "home": {
-    "title": "Todo list"
+    "title": "Todo List",
+    "add_task": "Add a task",
+    "tasklist": {
+      "todo_status": "To do",
+      "done_status": "Done"
+    }
   },
   "setting": {
     "title": "Settings"
