@@ -1,4 +1,4 @@
 export const TASK = {
-  todoStatus: 'En cours',
-  doneStatus: 'Terminé',
+  todoStatus: 'todo_status',
+  doneStatus: 'done_status',
 };
