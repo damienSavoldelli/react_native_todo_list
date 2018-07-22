@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Todo list"
+  },
+  "setting": {
+    "title": "Settings"
+  },
+  "common": {
+    "currentLanguage": "Language : \"{{lng}}\"",
+    "actions": {
+      "toggleToFrench": "French",
+      "toggleToEnglish": "English"
+    }
+  }
+}

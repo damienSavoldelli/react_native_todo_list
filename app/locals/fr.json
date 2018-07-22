@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Liste de Tâche"
+  },
+  "setting": {
+    "title": "Paramètres"
+  },
+  "common": {
+    "currentLanguage": "Langue : \"{{lng}}\"",
+    "actions": {
+      "toggleToFrench": "Français",
+      "toggleToEnglish": "Englais"
+    }
+  }
+}
