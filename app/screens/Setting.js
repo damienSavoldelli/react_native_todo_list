@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, StatusBar, Text } from 'react-native';
 
 class Setting extends Component {
   constructor(props) {
@@ -10,9 +10,10 @@ class Setting extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
+        <StatusBar translucent={false} barStyle="default" />
         <Text>Settings</Text>
-      </View>
+      </ScrollView>
     );
   }
 }

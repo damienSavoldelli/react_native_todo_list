@@ -3,7 +3,6 @@ import { APP_COLORS } from '../../styles/color';
 
 export default StyleSheet.create({
   subHeader: {
-    backgroundColor: '#111',
     height: 20,
   },
   header: {
@@ -13,7 +12,7 @@ export default StyleSheet.create({
     shadowOffset: { height: 5 },
   },
   textContainer: {
-    height: 150,
+    height: 100,
     justifyContent: 'center',
     alignItems: 'center',
   },

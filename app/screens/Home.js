@@ -191,7 +191,7 @@ class Home extends Component {
   render() {
     return (
       <View style={this.state.styles.container}>
-        <StatusBar translucent={false} barStyle="light-content" />
+        <StatusBar translucent={false} barStyle="default" />
         <Header 
           content="Liste des tâches"
           onPressCallback={() => this.onSettingPress()}
