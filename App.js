@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Home from './app/screens/Home';
+import Navigator from './app/config/routes';
 
 export default () => (
-  <Home />
+  <Navigator onNavigationStateChange={null} />
 );
