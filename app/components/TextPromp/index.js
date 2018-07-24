@@ -32,6 +32,7 @@ const TextPromp = (props) => {
       onCancel={() => onCancelCallback()}
       onSubmit={value => onSubmitCallback(value)}
       primaryColor={APP_COLORS.accent}
+      onBackButtonPress={() => onCancelCallback()}
     />
   );
 };
