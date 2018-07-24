@@ -178,7 +178,6 @@ class Home extends Component {
             taskList={this.state.list}
             onPressCallback={this.toggleModalTaskVisiblity}
             onLongPressCallback={(task) => this.displayRenamePrompt(task)}
-            t={t}
           />
       );
     }
