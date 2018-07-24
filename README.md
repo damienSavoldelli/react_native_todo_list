@@ -4,6 +4,15 @@ expo : https://expo.io/@damiens/todo_list
 
 lessons : https://www.udemy.com/tuto-react-native-pour-debutants/
 
+More :
+
+- Navigation :
+  - https://github.com/react-navigation/react-navigation
+  - https://reactnavigation.org/
+- Translation (en / fr) :
+  - https://github.com/i18next/react-i18next
+  - https://www.i18next.com/
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
