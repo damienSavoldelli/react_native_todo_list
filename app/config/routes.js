@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 
 import Home from '../screens/Home';
 import Setting from '../screens/Setting';
+import Translate from '../screens/Translate';
 
 const HomeStack = createStackNavigator(
   {
@@ -14,6 +15,9 @@ const HomeStack = createStackNavigator(
     },
     Setting: {
       screen: Setting,
+    },
+    Translate: {
+      screen: Translate,
     },
   },
   {
