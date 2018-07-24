@@ -4,7 +4,7 @@
     "name": "todo_list",
     "description": "A Todo List based on https://www.udemy.com/tuto-react-native-pour-debutants/ + Add Translation & Navigation",
     "orientation": "portrait",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "privacy": "public"
   }
 }
