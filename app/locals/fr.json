@@ -1,0 +1,42 @@
+{
+  "home": {
+    "title": "Liste de Tâche",
+    "add_task": "Ajouter une tâche",
+    "tasklist": {
+      "todo_status": "En cours",
+      "done_status": "Terminé"
+    },
+    "modal_task": {
+      "title": "Que souhaitez vous faire sur la tâche",
+      "delete": "Supprimer",
+      "change_status": "Changer Statut"
+    },
+    "new_task": {
+      "title": "Ajouter une tâche",
+      "placeholder": "Ex : Acheter de l'eau"
+    },
+    "rename_task": {
+      "title": "Renommer la tâche"
+    }
+  },
+  "setting": {
+    "title": "Paramètres",
+    "language": "Langue",
+    "themes": "Thèmes"
+  },
+  "translation": {
+    "title": "Langues"
+  },
+  "theme": {
+    "title": "Thèmes"
+  },
+  "common": {
+    "currentLanguage": "Langue : \"{{lng}}\"",
+    "actions": {
+      "toggleToFrench": "Français",
+      "toggleToEnglish": "Anglais",
+      "submit": "Valider",
+      "cancel": "Annuler"
+    }
+  }
+}

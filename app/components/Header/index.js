@@ -1,13 +1,24 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {
+  Text, View, TouchableOpacity, Image,
+} from 'react-native';
 
 import styles from './styles';
 
-const Header = ({ content }) => (
+const Header = ({ content, onPressCallback }) => (
   <View>
     <View style={styles.subHeader} />
     <View style={styles.header}>
-      <Text style={styles.text}>{content}</Text>
+      <TouchableOpacity style={styles.button} onPress={onPressCallback}>
+        <Image
+          resizeMode="contain"
+          style={styles.icon}
+          source={require('./images/gear.png')}
+        />
+      </TouchableOpacity>
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>{content}</Text>
+      </View>
     </View>
   </View>
 );

@@ -1,0 +1,39 @@
+{
+  "home": {
+    "title": "Todo List",
+    "add_task": "Add a task",
+    "tasklist": {
+      "todo_status": "To do",
+      "done_status": "Done"
+    },
+    "modal_task": {
+      "title": "What do you want to do on this task",
+      "delete": "Delete",
+      "change_status": "Change Status"
+    },
+    "new_task": {
+      "title": "Add new task",
+      "placeholder": "Ex : Buy water"
+    },
+    "rename_task": {
+      "title": "Rename the task"
+    }
+  },
+  "setting": {
+    "title": "Settings",
+    "language": "Language",
+    "themes": "Themes"
+  },
+  "translation": {
+    "title": "Language"
+  },
+  "common": {
+    "currentLanguage": "Language : \"{{lng}}\"",
+    "actions": {
+      "toggleToFrench": "French",
+      "toggleToEnglish": "English",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    }
+  }
+}

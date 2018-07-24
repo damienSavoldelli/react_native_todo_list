@@ -1,1 +1,1 @@
-export const storageKey = 'taskList';
+export const storageKey = 'taskListWithTranslate';
