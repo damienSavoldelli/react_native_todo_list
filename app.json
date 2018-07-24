@@ -2,8 +2,9 @@
   "expo": {
     "sdkVersion": "27.0.0",
     "name": "todo_list",
-    "description": "A Todo List based on https://www.udemy.com/tuto-react-native-pour-debutants/",
+    "description": "A Todo List based on https://www.udemy.com/tuto-react-native-pour-debutants/ + Add Translation & Navigation",
     "orientation": "portrait",
+    "version": "0.2.0",
     "privacy": "public"
   }
 }
