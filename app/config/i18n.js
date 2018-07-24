@@ -30,10 +30,10 @@ i18n
     ns: ['common'],
     defaultNS: 'common',
 
-    debug: true,
+    debug: false,
 
     // cache: {
-    //   enabled: true
+    //   enabled: true,
     // },
 
     interpolation: {
