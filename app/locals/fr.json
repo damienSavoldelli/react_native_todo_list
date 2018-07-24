@@ -20,13 +20,21 @@
     }
   },
   "setting": {
-    "title": "Paramètres"
+    "title": "Paramètres",
+    "language": "Langue",
+    "themes": "Thèmes"
+  },
+  "translation": {
+    "title": "Langues"
+  },
+  "theme": {
+    "title": "Thèmes"
   },
   "common": {
     "currentLanguage": "Langue : \"{{lng}}\"",
     "actions": {
       "toggleToFrench": "Français",
-      "toggleToEnglish": "Englais",
+      "toggleToEnglish": "Anglais",
       "submit": "Valider",
       "cancel": "Annuler"
     }

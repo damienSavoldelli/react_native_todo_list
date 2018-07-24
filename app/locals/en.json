@@ -20,7 +20,12 @@
     }
   },
   "setting": {
-    "title": "Settings"
+    "title": "Settings",
+    "language": "Language",
+    "themes": "Themes"
+  },
+  "translation": {
+    "title": "Language"
   },
   "common": {
     "currentLanguage": "Language : \"{{lng}}\"",
